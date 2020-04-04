@@ -1,0 +1,26 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - .git/**/*
+    - Gemfile
+    - vendor/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/LineLength:
+  Enabled: false
+
+# Disabled due to Rubocup bug.
+# See <https://github.com/rubocop-hq/rubocop/issues/6918>.
+Layout/RescueEnsureAlignment:
+  Enabled: false
