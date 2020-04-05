@@ -15,7 +15,7 @@ module SFCOVID19
 
       URI.open(SFDPH_URL) do |content|
         doc = Nokogiri::HTML(content)
-        data = doc.css('div.box2 p').each_with_object({}) do |para, data|
+        data = doc.css('div.box2 p').each_with_object({}) do |para, hash|
           case para.text
           when /([^:]+):\s+(\d+)/i
             raw_key = Regexp.last_match(1)
@@ -24,11 +24,11 @@ module SFCOVID19
             key = raw_key.to_s.chomp.downcase.gsub(/ /, '_')
             value = raw_value.to_i
 
-            data[key] = value
+            hash[key] = value
           end
         end
 
-        {data_time.iso8601 => data}
+        { data_time.iso8601 => data }
       end
     end
 
@@ -40,9 +40,7 @@ module SFCOVID19
 
       # SFDPH data is supposed to be updated at 9am every day
       data_time = timezone.local_time(time.year, time.month, time.day, 9, 0, 0)
-      if time.hour < 9
-        data_time = data_time - (24 * 60 * 60)
-      end
+      data_time -= (24 * 60 * 60) if time.hour < 9
 
       data_time.utc
     end
