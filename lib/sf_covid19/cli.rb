@@ -11,9 +11,11 @@ module SFCOVID19
     end
 
     desc 'scrape_sfdph', 'Scrape SFDPH website and dump data in JSON format'
+    option :pretty, type: :boolean, desc: 'Make JSON pretty.'
     def scrape_sfdph
       data = SFDPHScraper.new.scrape!
-      puts JSON.dump(data)
+      json = options[:pretty] ? JSON.pretty_generate(data) : JSON.generate(data)
+      puts json
     end
   end
 end
