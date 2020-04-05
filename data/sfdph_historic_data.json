@@ -1,102 +1,142 @@
 {
   "2020-03-02T17:00:00Z": {
-    "total_positive_cases": 0
+    "total_positive_cases": 0,
+    "deaths": 0
   },
   "2020-03-03T17:00:00Z": {
-    "total_positive_cases": 0
+    "total_positive_cases": 0,
+    "deaths": 0
   },
   "2020-03-04T17:00:00Z": {
-    "total_positive_cases": 0
+    "total_positive_cases": 0,
+    "deaths": 0
   },
   "2020-03-05T17:00:00Z": {
-    "total_positive_cases": 2
+    "total_positive_cases": 2,
+    "deaths": 0
   },
   "2020-03-06T17:00:00Z": {
-    "total_positive_cases": 2
+    "total_positive_cases": 2,
+    "deaths": 0
   },
   "2020-03-07T17:00:00Z": {
-    "total_positive_cases": 8
+    "total_positive_cases": 8,
+    "deaths": 0
   },
   "2020-03-08T16:00:00Z": {
-    "total_positive_cases": 8
+    "total_positive_cases": 8,
+    "deaths": 0
   },
   "2020-03-09T16:00:00Z": {
-    "total_positive_cases": 13
+    "total_positive_cases": 13,
+    "deaths": 0
   },
   "2020-03-10T16:00:00Z": {
-    "total_positive_cases": 14
+    "total_positive_cases": 14,
+    "deaths": 0
   },
   "2020-03-11T16:00:00Z": {
-    "total_positive_cases": 14
+    "total_positive_cases": 14,
+    "deaths": 0
   },
   "2020-03-12T16:00:00Z": {
-    "total_positive_cases": 18
+    "total_positive_cases": 18,
+    "deaths": 0
   },
   "2020-03-13T16:00:00Z": {
-    "total_positive_cases": 23
+    "total_positive_cases": 23,
+    "deaths": 0
   },
   "2020-03-14T16:00:00Z": {
-    "total_positive_cases": 28
+    "total_positive_cases": 28,
+    "deaths": 0
   },
   "2020-03-15T16:00:00Z": {
-    "total_positive_cases": 37
+    "total_positive_cases": 37,
+    "deaths": 0
   },
   "2020-03-16T16:00:00Z": {
-    "total_positive_cases": 40
+    "total_positive_cases": 40,
+    "deaths": 0
   },
   "2020-03-17T16:00:00Z": {
-    "total_positive_cases": 43
+    "total_positive_cases": 43,
+    "deaths": 0
   },
   "2020-03-18T16:00:00Z": {
-    "total_positive_cases": 51
+    "total_positive_cases": 51,
+    "deaths": 0
   },
   "2020-03-19T16:00:00Z": {
-    "total_positive_cases": 70
+    "total_positive_cases": 70,
+    "deaths": 0
   },
   "2020-03-20T16:00:00Z": {
-    "total_positive_cases": 76
+    "total_positive_cases": 76,
+    "deaths": 0
   },
   "2020-03-21T16:00:00Z": {
-    "total_positive_cases": 84
+    "total_positive_cases": 84,
+    "deaths": 0
   },
   "2020-03-22T16:00:00Z": {
-    "total_positive_cases": 108
+    "total_positive_cases": 108,
+    "deaths": 0
   },
   "2020-03-23T16:00:00Z": {
-    "total_positive_cases": 131
+    "total_positive_cases": 131,
+    "deaths": 0
   },
   "2020-03-24T16:00:00Z": {
-    "total_positive_cases": 152
+    "total_positive_cases": 152,
+    "deaths": 0
   },
   "2020-03-25T16:00:00Z": {
-    "total_positive_cases": 178
+    "total_positive_cases": 178,
+    "deaths": 1
   },
   "2020-03-26T16:00:00Z": {
-    "total_positive_cases": 223
+    "total_positive_cases": 223,
+    "deaths": 2
   },
   "2020-03-27T16:00:00Z": {
-    "total_positive_cases": 279
+    "total_positive_cases": 279,
+    "deaths": 3
   },
   "2020-03-28T16:00:00Z": {
-    "total_positive_cases": 308
+    "total_positive_cases": 308,
+    "deaths": 4
   },
   "2020-03-29T16:00:00Z": {
-    "total_positive_cases": 340
+    "total_positive_cases": 340,
+    "deaths": 5
   },
   "2020-03-30T16:00:00Z": {
-    "total_positive_cases": 374
+    "total_positive_cases": 374,
+    "deaths": 6
   },
   "2020-03-31T16:00:00Z": {
-    "total_positive_cases": 397
+    "total_positive_cases": 397,
+    "deaths": 6
   },
   "2020-04-01T16:00:00Z": {
-    "total_positive_cases": 434
+    "total_positive_cases": 434,
+    "deaths": 7
   },
   "2020-04-02T16:00:00Z": {
-    "total_positive_cases": 450
+    "total_positive_cases": 450,
+    "deaths": 7
   },
   "2020-04-03T16:00:00Z": {
     "total_positive_cases": 497,
     "deaths": 7
+  },
+  "2020-04-04T16:00:00Z": {
+    "total_positive_cases": 500,
+    "deaths": 8
+  },
+  "2020-04-05T16:00:00Z": {
+    "total_positive_cases": 568,
+    "deaths": 8
   }
 }
