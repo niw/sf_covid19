@@ -17,5 +17,15 @@ module SFCOVID19
       json = options[:pretty] ? JSON.pretty_generate(data) : JSON.generate(data)
       puts json
     end
+
+    desc 'update_data PATH', 'Update historic data at path in JSON format'
+    option :pretty, type: :boolean, desc: 'Make JSON pretty.'
+    def update_data(path)
+      historic_data = JSON.parse(File.read(path))
+      new_data = SFDPHScraper.new.scrape!
+      data = historic_data.merge(new_data)
+      json = options[:pretty] ? JSON.pretty_generate(data) : JSON.generate(data)
+      File.open(path, 'w') { |file| file.puts json }
+    end
   end
 end
