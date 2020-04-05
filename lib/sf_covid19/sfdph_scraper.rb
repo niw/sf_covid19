@@ -3,15 +3,19 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
+require 'time'
+require 'tzinfo'
 
 module SFCOVID19
   class SFDPHScraper
     SFDPH_URL = 'https://www.sfdph.org/dph/alerts/coronavirus.asp'
 
-    def self.scrape!
+    def scrape!
+      data_time = estimated_data_time
+
       URI.open(SFDPH_URL) do |content|
         doc = Nokogiri::HTML(content)
-        doc.css('div.box2 p').each_with_object({}) do |para, data|
+        data = doc.css('div.box2 p').each_with_object({}) do |para, data|
           case para.text
           when /([^:]+):\s+(\d+)/i
             raw_key = Regexp.last_match(1)
@@ -23,7 +27,24 @@ module SFCOVID19
             data[key] = value
           end
         end
+
+        {data_time.iso8601 => data}
       end
+    end
+
+    private
+
+    def estimated_data_time
+      timezone = TZInfo::Timezone.get('America/Los_Angeles')
+      time = timezone.now
+
+      # SFDPH data is supposed to be updated at 9am every day
+      data_time = timezone.local_time(time.year, time.month, time.day, 9, 0, 0)
+      if time.hour < 9
+        data_time = data_time - (24 * 60 * 60)
+      end
+
+      data_time.utc
     end
   end
 end

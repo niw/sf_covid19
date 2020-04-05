@@ -10,9 +10,9 @@ module SFCOVID19
       true
     end
 
-    desc 'scrape_sfdph', 'Scrape SFDPH website'
+    desc 'scrape_sfdph', 'Scrape SFDPH website and dump data in JSON format'
     def scrape_sfdph
-      data = SFDPHScraper.scrape!
+      data = SFDPHScraper.new.scrape!
       puts JSON.dump(data)
     end
   end
