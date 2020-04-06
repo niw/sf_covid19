@@ -36,8 +36,8 @@ module SFCOVID19
 
     TIMESTAMP_COLUMN_KEY = 'timestamp'
 
-    desc 'convert_to_csv PATH', 'Convert historic data at path in JSON format to CSV'
-    def convert_to_csv(path)
+    desc 'convert_to_tsv PATH', 'Convert historic data at path in JSON format to TSV'
+    def convert_to_tsv(path)
       historic_data = JSON.parse(File.read(path))
 
       columns = Set.new
@@ -48,13 +48,13 @@ module SFCOVID19
       end
       columns = columns.sort.to_a
 
-      csv = []
-      csv << [TIMESTAMP_COLUMN_KEY] + columns
+      tsv = []
+      tsv << [TIMESTAMP_COLUMN_KEY] + columns
       data.keys.sort.each do |key|
-        csv << [key.iso8601] + columns.map { |value_key| data[key][value_key] }
+        tsv << [key.iso8601] + columns.map { |value_key| data[key][value_key] }
       end
 
-      csv.each do |row|
+      tsv.each do |row|
         puts row.join("\t")
       end
     end
