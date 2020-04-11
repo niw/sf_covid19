@@ -7,6 +7,8 @@ require 'time'
 
 module SFCOVID19
   class CLI < Thor
+    DEFAULT_DATA_PATH = File.expand_path('../../data/sfdph_historic_data.json', __dir__)
+
     def self.exit_on_failure?
       true
     end
@@ -19,10 +21,12 @@ module SFCOVID19
       puts json
     end
 
-    desc 'update_data PATH', 'Update historic data at path in JSON format'
+    desc 'update_data', 'Update historic data'
+    option :path, type: :string, default: DEFAULT_DATA_PATH, desc: 'Path to JSON file'
     option :replace, type: :boolean, desc: 'Replace content of path'
-    option :pretty, type: :boolean, desc: 'Make JSON pretty.'
-    def update_data(path)
+    option :pretty, type: :boolean, default: true, desc: 'Make JSON pretty.'
+    def update_data
+      path = options[:path]
       historic_data = JSON.parse(File.read(path))
       new_data = SFDPHScraper.new.scrape!
       data = historic_data.merge(new_data)
@@ -36,8 +40,10 @@ module SFCOVID19
 
     TIMESTAMP_COLUMN_KEY = 'timestamp'
 
-    desc 'convert_to_tsv PATH', 'Convert historic data at path in JSON format to TSV'
-    def convert_to_tsv(path)
+    desc 'convert_to_tsv [PATH]', 'Convert historic data to TSV'
+    option :path, type: :string, default: DEFAULT_DATA_PATH, desc: 'Path to JSON file'
+    def convert_to_tsv
+      path = options[:path]
       historic_data = JSON.parse(File.read(path))
 
       columns = Set.new
