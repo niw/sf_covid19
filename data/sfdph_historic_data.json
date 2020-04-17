@@ -179,6 +179,10 @@
     "total_positive_cases": 1013,
     "deaths": 17
   },
+  "2020-04-16T16:00:00Z": {
+    "total_positive_cases": 1039,
+    "deaths": 17
+  },
   "2020-04-17T16:00:00Z": {
     "total_positive_cases": 1058,
     "deaths": 20
