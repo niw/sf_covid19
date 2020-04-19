@@ -186,5 +186,9 @@
   "2020-04-17T16:00:00Z": {
     "total_positive_cases": 1058,
     "deaths": 20
+  },
+  "2020-04-18T16:00:00Z": {
+    "total_positive_cases": 1137,
+    "deaths": 20
   }
 }
