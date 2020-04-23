@@ -206,5 +206,9 @@
   "2020-04-22T16:00:00Z": {
     "total_positive_cases": 1233,
     "deaths": 21
+  },
+  "2020-04-23T16:00:00Z": {
+    "total_positive_cases": 1302,
+    "deaths": 21
   }
 }
