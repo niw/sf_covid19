@@ -242,5 +242,9 @@
   "2020-05-01T16:00:00Z": {
     "total_positive_cases": 1523,
     "deaths": 28
+  },
+  "2020-05-02T16:00:00Z": {
+    "total_positive_cases": 1543,
+    "deaths": 29
   }
 }
